@@ -1,0 +1,9 @@
+---
+
+- name: update startpage nginx
+  copy:
+    src: "files/"
+    dest: "/usr/share/nginx/html/"
+    owner: root
+  notify:
+    - reload nginx

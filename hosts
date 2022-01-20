@@ -1,0 +1,6 @@
+[myhosts]
+
+[test]
+192.168.43.98 ansible_user=test
+[prod]
+192.168.43.99 ansible_user=test

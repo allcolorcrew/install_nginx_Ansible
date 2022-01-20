@@ -1,0 +1,24 @@
+---
+
+- name: template for repo
+  template:
+    src: roles/nginx/templates/repo_for_nginx.j2
+    dest: /etc/apt/sources.list.d/nginx.list
+
+- name: install requiers packages
+  apt:
+    name:
+      - curl
+      - gnupg2
+      - ca-certificates
+    state: present
+  
+- name: include repo-key
+  shell:
+    cmd: "curl -fsSL https://nginx.org/keys/nginx_signing.key | apt-key add -"
+
+- name: update repo
+  apt:
+    update_cache: yes
+    upgrade: yes
+      

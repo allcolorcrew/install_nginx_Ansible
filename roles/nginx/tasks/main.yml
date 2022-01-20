@@ -1,0 +1,15 @@
+---
+
+- name: 'PREINSTALL | preinstall for nginx'
+  import_tasks: "preinstall.yml"
+  tags: ['nginx', 'nginx::preinstall']
+
+- name: 'INSTALL | install nginx'
+  import_tasks: "install.yml"
+  tags: ['nginx', 'nginx::install']
+
+- name: 'CONFIG | config nginx'
+  import_tasks: "config.yml"
+  tags: ['nginx', 'nginx::config']
+
+    
